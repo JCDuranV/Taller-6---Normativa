@@ -1,1 +1,2 @@
 # Taller-6---Normativa
+Este repositorio muestra el trabajo por los estudiantes Julián Alvarado, Julián Durán, Sebastian Piñeros Castellanos para el taller de Arquitectura Normativa el cual tiene como objetivo verificar los aspectos legales, normativos y de cumplimiento que aplican a un sistema de cliente, utilizando listas de control basadas en marcos como ISO 27001, GDPR, Habeas Data y la Ley 1581 de Protección de Datos en Colombia.
