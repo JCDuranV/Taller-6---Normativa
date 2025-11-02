@@ -1,4 +1,4 @@
-# Registro de Trabajo en Clase - Arquitectura C4
+# Registro de Trabajo en Clase - Taller 6 Normativa
 
 ---
 ## Fecha de la sesión
@@ -32,3 +32,4 @@ Se asignan las responsabilidades entre los miembros del equipo:
 ---
 
 Este documento resume el trabajo colaborativo realizado durante la sesión del taller 6 Normatic en el curso AREM - Universidad de La Sabana.
+
