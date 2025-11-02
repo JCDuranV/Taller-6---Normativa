@@ -2,88 +2,78 @@
 ---
 ## Nombre del Taller
 
-Taller 3 - Arquitectura C4
+Taller 6 – Evaluación de Cumplimiento Normativo
 
 ---
-## Intergantes del equipo
+## Integrantes del equipo
 
-- Julián David Alvarado Gantiva
-- Julián Camilo Durán Valencia
-- Sebastián Piñeros Castellanos
+- Julián David Alvarado Gantiva  
+- Julián Camilo Durán Valencia  
+- Sebastián Piñeros Castellanos  
+
 ---
-
 ## Descripción general del trabajo
 
-En el presente taller se implementó la metodología de modelado de software bajo la notación C4 Model, con el fin de representar la arquitectura del caso aplicado al Software de Contabilidad. A través de este enfoque, se buscó describir la manera en que los diferentes actores interactúan con el sistema, así como la organización de los principales contenedores internos que conforman la solución tecnológica.
+En este taller se desarrolló una evaluación de cumplimiento normativo aplicada al caso de la *Empresa de Contabilidad – Digitalización y Automatización de Procesos Documentales*. El trabajo tiene como propósito analizar el nivel de cumplimiento de la organización frente a los marcos legales y estándares aplicables a la gestión de información, privacidad de datos y seguridad digital.
 
-En el directorio del proyecto se incluyen los diagramas elaborados:
-
-- Vista de Contexto (C1): donde se definen los actores externos, los sistemas involucrados y las interacciones principales.
-
-- Vista de Contenedores (C2): donde se descompone el sistema central en contenedores de software y se muestran sus relaciones con la base de datos y sistemas externos.
+La empresa analizada se encuentra en proceso de transformación digital, reemplazando procedimientos manuales por soluciones automatizadas que incluyen reconocimiento óptico de caracteres (OCR), almacenamiento en la nube y control de accesos. El diagnóstico permitió identificar brechas, fortalezas y oportunidades de mejora alineadas con la normativa colombiana e internacional.
 
 ---
 ## Proceso de desarrollo
 
-Para la construcción de la arquitectura del sistema se decidió utilizar la notación C4 en sus dos primeros niveles (C1 y C2).
+Para el desarrollo del análisis, se aplicó un *checklist* de cumplimiento normativo adaptado al contexto del sector contable.  
+Cada control fue clasificado como **Cumple (✔)**, **Brecha (⚠)** o **No Aplica (✖)** según las observaciones realizadas sobre las políticas, infraestructura y prácticas de la empresa.
 
-En primer lugar, se elaboró la Vista de Contexto (C1), donde se identificaron tres actores principales: Cliente, Contador y Administrador. También se incluyó un sistema externo clave: el Portal de Extractos, el cual provee los documentos bancarios necesarios para su integración posterior en el sistema contable. Se representaron las relaciones con etiquetas orientadas al negocio, tales como “consulta reportes”, “registra información contable” y “gestiona usuarios y procesos”.
+Las principales normas consideradas fueron:
 
-En una segunda etapa, se construyó la Vista de Contenedores (C2), desglosando el Software de Contabilidad en sus módulos internos: Módulo de gestión contable, Módulo de reportes financieros, Módulo de integración de extractos y Módulo de usuarios y roles. Asimismo, se representó la Base de datos contable como contenedor de persistencia central. Finalmente, se modeló la interacción con el Portal de extractos, encargado de suministrar los documentos descargados por los clientes.
-
----
-##  Análisis del modelo propuesto
-
-El modelo arquitectónico propuesto busca representar de manera clara la estructura tecnológica del Software de Contabilidad en dos niveles de detalle (C1 y C2).
-
-Análisis del modelo:
-
-- Estructura del modelo: La vista de contexto refleja cómo los actores interactúan con el sistema principal, mostrando el límite entre el software contable y el sistema externo (Portal de extractos). La vista de contenedores, por su parte, detalla la organización interna del sistema en módulos especializados, lo que aporta mayor granularidad y facilita comprender la responsabilidad de cada componente.
-
-- Representación de las necesidades del negocio: El modelo responde a la necesidad de registrar operaciones contables, consultar estados financieros y gestionar usuarios. El módulo de integración de extractos atiende la carga de documentos descargados externamente, mientras que el módulo de reportes financieros facilita la consulta de balances y estados financieros por parte de clientes y contadores.
-
-- Supuestos tomados: Se asumió que la base de datos contable centraliza todas las operaciones, usuarios y extractos de manera segura, y que la comunicación con el portal externo de extractos es estable y confiable. Asimismo, se consideró que los actores acceden al sistema mediante aplicaciones soportadas en web, sin integración con APIs bancarias ni notificaciones externas adicionales.
-
-En conclusión, los modelos C4 elaborados ofrecen una representación clara, coherente y alineada con las necesidades operativas del Software de Contabilidad, permitiendo visualizar tanto las interacciones de alto nivel como la composición interna del sistema central.
+- Ley 1581 de 2012 – Protección de Datos Personales.  
+- Decreto 1377 de 2013 – Reglamentario de la Ley 1581.  
+- Ley 527 de 1999 – Mensajes de Datos y Comercio Electrónico.  
+- Circular Externa 029 de 2014 – Superintendencia Financiera (SFC).  
+- Lineamientos de Gobierno Digital – MinTIC.  
+- ISO/IEC 27001:2022 – Sistema de gestión de seguridad de la información.  
+- Directrices de la DIAN sobre conservación de documentos contables electrónicos.
 
 ---
-## Diagrama final entregado
+## Resultados del checklist
 
-Diagrama C1 - RedExpress:
-![alt text](C1final.png)
-
-Diagrama C2 - RedExpress:
-![alt text](C2final.png)
-
----
-## Tabla de actores, entidades o componentes
-
-| Nombre del elemento                | Tipo         | Descripción                                                                | Responsable    |
-| ---------------------------------- | ------------ | -------------------------------------------------------------------------- | -------------- |
-| Cliente                            | Actor        | Persona que usa el sistema para consultar sus estados financieros          | Cliente        |
-| Contador                           | Actor        | Registra y valida la información contable                                  | Contador       |
-| Administrador                      | Actor        | Gestiona usuarios, permisos y procesos internos                            | Administrador  |
-| Portal de extractos                | Sistema ext. | Permite descargar extractos bancarios que se integran al software contable | Cliente        |
-| Módulo de gestión contable         | Contenedor   | Registra ingresos, egresos y asientos contables                            | Equipo interno |
-| Módulo de reportes financieros     | Contenedor   | Genera balances y reportes personalizados                                  | Equipo interno |
-| Módulo de integración de extractos | Contenedor   | Permite cargar extractos descargados desde el portal externo               | Equipo interno |
-| Módulo de usuarios y roles         | Contenedor   | Maneja autenticación, permisos y perfiles de acceso                        | Administrador  |
-| Base de datos contable             | Contenedor   | Almacena transacciones, usuarios, extractos y reportes                     | Equipo interno |
-
+| Área Evaluada | Cumple / Brecha / N/A | Observación | Recomendación |
+|----------------|------------------------|--------------|----------------|
+| Gestión de Datos Personales | ⚠ Brecha | No existe un procedimiento formal para la eliminación de datos contables históricos. | Definir y documentar una política de retención y eliminación de datos conforme a la Ley 1581 y la ISO 27001. |
+| Seguridad de la Información | ⚠ Brecha | La empresa aún no implementa autenticación multifactor ni cifrado en reposo. | Implementar autenticación multifactor (MFA) y cifrado de información sensible. |
+| Privacidad y Consentimiento | ✔ Cumple | Se cuenta con aviso de privacidad y política de tratamiento de datos visibles para los clientes. | Mantener actualizada la política e incluir un registro de revisiones anuales. |
+| Respaldo y Recuperación | ⚠ Cumple parcialmente | Existen copias automáticas, pero sin registro de auditoría sobre restauraciones. | Registrar evidencias de respaldo y validación periódica de integridad de la información. |
+| Gestión Documental | ✔ Cumple | Los documentos digitalizados se almacenan en un entorno centralizado con control de versiones. | Revisar el cumplimiento con las guías de la DIAN y la Ley 527 para garantizar validez legal. |
+| Auditoría Interna | ⚠ Brecha | No se realizan auditorías internas de seguridad o privacidad de manera formal. | Programar auditorías anuales basadas en los requisitos del Anexo A de la ISO 27001. |
+| Interoperabilidad y Estándares | ✖ No Aplica | Actualmente no se intercambian datos con otros sistemas empresariales externos. | Mantener esta clasificación y evaluar su aplicabilidad en futuras integraciones. |
 
 ---
-## Investigación complementaria
+## Análisis del modelo propuesto
 
-El C4 Model se ha consolidado como una metodología efectiva para documentar y comunicar arquitecturas de software en distintos niveles de detalle. Una buena práctica fundamental consiste en mantener la simplicidad de los diagramas, evitando sobrecargar con información innecesaria (Brown, 2019). Asimismo, se recomienda mantener una clara separación entre actores, sistemas, contenedores y componentes, lo que favorece la comprensión por parte de equipos técnicos y no técnicos.
+El modelo de cumplimiento normativo implementado permite visualizar el estado actual de la organización frente a los requisitos legales y técnicos de seguridad.  
+El análisis evidenció fortalezas en la **gestión documental** y en la **transparencia del tratamiento de datos personales**, pero también se identificaron brechas significativas en **seguridad tecnológica**, **auditoría** y **retención de información**.
 
-Otra práctica clave es utilizar etiquetas claras en las relaciones, orientadas al negocio y no únicamente técnicas, de modo que el diagrama refleje el valor que aporta cada interacción. Además, se aconseja complementar los diagramas con tablas descriptivas que especifiquen los roles, responsabilidades y detalles de los componentes modelados.
-
-Estas recomendaciones se aplicaron directamente en el presente taller: se priorizó la claridad en las relaciones, se delimitaron actores y sistemas externos en la vista de contexto, y se describieron los módulos internos en la vista de contenedores junto con una base de datos centralizada.
+**Aspectos destacados:**
+- El entorno digital de la empresa ha mejorado la trazabilidad y la eficiencia en el manejo de documentos.  
+- La ausencia de políticas formales de retención y auditorías representa un riesgo de incumplimiento normativo.  
+- La adopción de prácticas basadas en ISO 27001 y MinTIC fortalecería la madurez del sistema de seguridad de la información.
 
 ---
+## Recomendaciones generales
 
+1. Formalizar políticas de retención, eliminación y respaldo de información.  
+2. Implementar autenticación multifactor y cifrado de datos sensibles.  
+3. Realizar auditorías internas anuales de cumplimiento.  
+4. Actualizar las políticas de privacidad cada año.  
+5. Capacitar al personal en seguridad digital y protección de datos.  
+
+---
+## Conclusión
+
+La *Empresa de Contabilidad – Digitalización y Automatización de Procesos Documentales* demuestra un avance significativo en su proceso de modernización tecnológica. No obstante, es necesario cerrar las brechas detectadas para garantizar la protección integral de los datos contables y personales.  
+El cumplimiento de la Ley 1581, la Ley 527 y las directrices del MinTIC y la SFC, junto con la implementación de ISO 27001, consolidará la confianza en sus operaciones y la eficiencia de sus servicios digitales.
+
+---
 ## Referencias
 
-Brown, S. (2019). The C4 model for visualising software architecture. Recuperado el 7 de septiembre de 2025 de https://c4model.com/
-
-Visual Paradigm. (s.f.). C4 model: Software architecture visualization. Recuperado el 7 de septiembre de 2025 de https://online.visual-paradigm.com/knowledge/c4-model/
+Ver archivo: [referencias.md](referencias.md)
